@@ -6,12 +6,15 @@ pipeline {
         }
     }
 
+
     stages {
         stage('Build') {
             steps {
                 sh 'npm install'
             }
         }
+
+        snykSecurity snykInstallation: 'Snyk', snykTokenId: 'ee8f389a-19df-40cd-8bff-caa44befcf25'
         
         stage('Test') {
             steps {

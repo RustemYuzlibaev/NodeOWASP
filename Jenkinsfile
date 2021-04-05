@@ -1,3 +1,6 @@
+snykSecurity snykInstallation: 'Snyk', snykTokenId: 'ee8f389a-19df-40cd-8bff-caa44befcf25'
+
+
 pipeline {
     agent {
         docker {
@@ -14,7 +17,6 @@ pipeline {
             }
         }
 
-        snykSecurity snykInstallation: 'Snyk', snykTokenId: 'ee8f389a-19df-40cd-8bff-caa44befcf25'
         
         stage('Test') {
             steps {

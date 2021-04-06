@@ -18,9 +18,8 @@ pipeline {
 
         
         stage('Test') {
-
             steps {
-                snykSecurity snykInstallation: 'Snyk', snykTokenId: 'ee8f389a-19df-40cd-8bff-caa44befcf25'
+                snykSecurity(tokenCredentialId: 'ee8f389a-19df-40cd-8bff-caa44befcf25', failOnBuild: true, monitor: true) 
                 sh 'npm test'
             }
         }

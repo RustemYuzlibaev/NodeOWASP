@@ -1,5 +1,4 @@
 pipeline {
-    snykSecurity snykInstallation: 'Snyk', snykTokenId: 'ee8f389a-19df-40cd-8bff-caa44befcf25'
 
 
     agent {
@@ -19,6 +18,8 @@ pipeline {
 
         
         stage('Test') {
+            snykSecurity snykInstallation: 'Snyk', snykTokenId: 'ee8f389a-19df-40cd-8bff-caa44befcf25'
+
             steps {
                 sh 'npm test'
             }

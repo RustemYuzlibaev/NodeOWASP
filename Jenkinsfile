@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node'
-            args '-p 3000:3000'
+            args '-v /opt/jenkins/:/opt/jenkins'
         }
     }
 

@@ -15,11 +15,6 @@ pipeline {
 
         
         stage('Test') {
-            docker {
-                image 'debian'
-                args '-v /opt/jenkins/:/opt/jenkins'
-            }
-
             steps {
                 sh '/tools/io.snyk.jenkins.tools.SnykInstallation/snyk_latest/snyk-alpine --version'
                 snykSecurity snykInstallation: 'Snyk', 
